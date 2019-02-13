@@ -42,11 +42,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', 'mysql.farmstar.co.ke'),
+            'port' => env('DB_PORT', ''),
+            'database' => env('DB_DATABASE', 'sanergy_ussd'),
+            'username' => env('DB_USERNAME', 'sanerussd'),
+            'password' => env('DB_PASSWORD', 'SanerU55dDB'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8', //'charset' => 'utf8mb4',
             'collation' => 'utf8_unicode_ci', //'utf8mb4_unicode_ci',
