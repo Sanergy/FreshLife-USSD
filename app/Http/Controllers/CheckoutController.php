@@ -114,10 +114,10 @@ class CheckoutController extends Controller
         //Get the data from the search bar 
         $searchData = $request->input('search');
         
-        $checkout = Checkout::where('status','LIKE','%'.$searchData.'%')->orWhere('phoneNumber','LIKE','%'.$searchData.'%')->orderBy('transactionDate','desc')->get();
+        $checkouts = Checkout::where('status','LIKE','%'.$searchData.'%')->orWhere('phoneNumber','LIKE','%'.$searchData.'%')->orderBy('transactionDate','desc')->get();
 
-        if(count($checkout) > 0)
-            return view('checkouts.search',compact('details'))->withDetails($checkout)->withQuery ( $searchData );
+        if(count($checkouts) > 0)
+            return view('checkouts.search',compact('checkouts'))->withDetails($checkouts)->withQuery ( $searchData );
         else 
             return view ('checkouts.search')->withMessage('No Details found. Try to search again !');        
 
@@ -154,11 +154,11 @@ class CheckoutController extends Controller
         // var_dump($date);
         // echo '<br/><br/>';
 
-        // $checkout = Checkout::where('transactionDate','LIKE','%'.$startDate.'%')->orWhere('transactionDate','LIKE','%'.$endDate.'%')->orderBy('transactionDate','desc')->get();
-        $checkout = Checkout::whereBetween('transactionDate',[$startDate,$endDate])->orderBy('transactionDate','desc')->get();        
+        // $checkouts = Checkout::where('transactionDate','LIKE','%'.$startDate.'%')->orWhere('transactionDate','LIKE','%'.$endDate.'%')->orderBy('transactionDate','desc')->get();
+        $checkouts = Checkout::whereBetween('transactionDate',[$startDate,$endDate])->orderBy('transactionDate','desc')->get();        
 
-        if(count($checkout) > 0)
-            return view('checkouts.search',compact('details'))->withDetails($checkout)->withQuery ( $date );
+        if(count($checkouts) > 0)
+            return view('checkouts.search',compact('checkouts'))->withDetails($checkouts)->withQuery ( $date );
         else 
             return view ('checkouts.search')->withMessage('No Details found. Try to search again !');           
 

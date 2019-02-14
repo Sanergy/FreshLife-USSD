@@ -263,12 +263,12 @@ class TransactionController extends Controller
         //                             WHERE TransactionDate LIKE ? ORDER BY TransactionDate DESC', 
         //                             ['%'.$date.'%']);
 
-        $transaction = DB::select('SELECT * FROM vwUSSDTransactions 
+        $transactions = DB::select('SELECT * FROM vwUSSDTransactions 
                                     WHERE TransactionDate BETWEEN ? AND ? ORDER BY TransactionDate DESC', 
                                     [$startDate,$endDate]);       
 
-        if(count($transaction) > 0)
-            return view('transactions.search',compact('details'))->withDetails($transaction)->withQuery ( $date );
+        if(count($transactions) > 0)
+            return view('transactions.search',compact('transactions'))->withDetails($transactions)->withQuery ( $date );
         else 
             return view ('transactions.search')->withMessage('No record(s) found. Search again !');
             // return redirect('transactions/searchByDate')->with('errorMessage', 'No record(s) found. Search again !');      
