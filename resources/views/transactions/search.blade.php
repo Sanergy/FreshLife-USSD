@@ -59,7 +59,7 @@
                 </div><br />
             @endif         
 
-            @if(isset($details))
+            @if(isset($transactions))
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -76,7 +76,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($details as $transaction)
+                        @foreach($transactions as $transaction)
                         <tr>     
                             <td>{{$transaction->id}}</td>
                             <td>{{$transaction->ClientAccount}}</td>

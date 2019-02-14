@@ -217,14 +217,14 @@ class TransactionController extends Controller
         //Get the data from the search bar 
         $searchData = $request->input('search');
 
-        $transaction = DB::select('SELECT * FROM vwUSSDTransactions 
+        $transactions = DB::select('SELECT * FROM vwUSSDTransactions 
                                     WHERE Source LIKE ? 
                                     OR ClientAccount LIKE ? 
                                     OR FLTPaidFor LIKE ? ORDER BY TransactionDate DESC' , 
                                     ['%'.$searchData.'%', '%'.$searchData.'%', '%'.$searchData.'%']);
         
-        if(count($transaction) > 0)
-            return view('transactions.search',compact('details'))->withDetails($transaction)->withQuery ( $searchData );
+        if(count($transactions) > 0)
+            return view('transactions.search',compact('transactions'))->withDetails($transactions)->withQuery ( $searchData );
         else 
             return view ('transactions.search')->withMessage('No Details found. Try to search again !');
             
