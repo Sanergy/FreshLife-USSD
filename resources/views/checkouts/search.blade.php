@@ -23,7 +23,7 @@
             <!--Start Navbar-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{asset('images/Fresh_Life_Logo.png')}}" width="100" height="30" class="d-inline-block align-top" alt="Fresh Life">
+                    <img src="{{asset('images/Fresh_Life_Logo.png')}}" width="140" height="50" class="d-inline-block align-top" alt="Fresh Life">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,11 +31,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ url('/checkouts') }}">Checkouts <span class="sr-only">(current)</span></a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Transactions</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ url('/checkouts') }}">Checkouts <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 
@@ -59,7 +59,7 @@
                 </div><br />
             @endif
 
-            @if(isset($details))
+            @if(isset($checkouts))
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -76,7 +76,7 @@
                     </thead>
                     <tbody>
                     
-                        @foreach($details as $checkout)
+                        @foreach($checkouts as $checkout)
                         <tr>
                             <td>{{$checkout->id}}</td>
                             <td>{{$checkout->status}}</td>

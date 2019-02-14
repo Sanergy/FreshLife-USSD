@@ -23,7 +23,7 @@
             <!--Start Navbar-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{asset('images/Fresh_Life_Logo.png')}}" width="100" height="30" class="d-inline-block align-top" alt="Fresh Life">
+                    <img src="{{asset('images/Fresh_Life_Logo.png')}}" width="140" height="50" class="d-inline-block align-top" alt="Fresh Life">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
