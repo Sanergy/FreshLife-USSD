@@ -62,7 +62,7 @@ class AirtimeController extends Controller
                 //Array for setting the Phone numbers,Currency & airtime amount that each FLO should receive
                 $phoneNumberList["phoneNumber"] = "$user->phoneNumber";
                 $phoneNumberList["currencyCode"] = "KES";
-                $phoneNumberList["amount"] = "30";
+                $phoneNumberList["amount"] = "$user->amountToSend";
     
                 //Append each record to the $airtime_recipients array
                 //in order to send airtime to FLOs in bulk
