@@ -49,10 +49,10 @@ class AirtimeController extends Controller
         //Holds bulk data for update to the DB
         $bulkdata = array();
         
-        //Selects records from the 'airtime' table where sentAirtime = 0 AND id > 295
+        //Selects records from the 'airtime' table where sentAirtime = 0 AND amountToSend > 5
         $airtime = DB::select('SELECT id,phoneNumber,sentAirtime , amountToSend
                                     FROM airtime 
-                                    WHERE sentAirtime = ? AND id > ?', [0, 295]);        
+                                    WHERE sentAirtime = ? AND amountToSend > ?', [0, 5]);        
         
         try {
 
