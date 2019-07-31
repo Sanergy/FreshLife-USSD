@@ -42,11 +42,9 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        // // Set your app credentials
-        // $username = "csaussd";
-        // $apiKey   = "9ef49c4e182c7ae7f282b4103c12b52b42197d2124465134a4f0df98b5866996";
-        // //$username = "sandbox";
-        // //$apiKey   = "b9d0b23772a378e6371741ee5fb42102aab40e3efee8f52af1890bb6b8e5104e";        
+        // Set your AfricasTalking credentials
+        //$username = "sandbox";
+        //$apiKey   = "b9d0b23772a378e6371741ee5fb42102aab40e3efee8f52af1890bb6b8e5104e";;        
 
         // // Initialize the SDK
         // $AT  = new AfricasTalking($username, $apiKey);
@@ -281,9 +279,7 @@ class TransactionController extends Controller
      */
     public function writeAfricasTalkingTransactionsToCSV()
     {
-        /* Set your app credentials
-        $username = "csaussd";
-        $apiKey   = "9ef49c4e182c7ae7f282b4103c12b52b42197d2124465134a4f0df98b5866996";
+        /* Set your AfricasTalking credentials
         //$username = "sandbox";
         //$apiKey   = "b9d0b23772a378e6371741ee5fb42102aab40e3efee8f52af1890bb6b8e5104e";        
 

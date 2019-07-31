@@ -18,9 +18,7 @@ class AirtimeController extends Controller
      */
     public function sendAirtime()
     {
-        // // Set your app credentials
-        // $username = "csaussd";
-        // $apiKey   = "9ef49c4e182c7ae7f282b4103c12b52b42197d2124465134a4f0df98b5866996";
+        //Set your AfricasTalking credentials
         $username = "sandbox";
         $apiKey   = "b9d0b23772a378e6371741ee5fb42102aab40e3efee8f52af1890bb6b8e5104e";        
 
@@ -52,7 +50,7 @@ class AirtimeController extends Controller
         //Selects records from the 'airtime' table where sentAirtime = 0 AND amountToSend > 5
         $airtime = DB::select('SELECT id,phoneNumber,sentAirtime , amountToSend
                                     FROM airtime 
-                                    WHERE sentAirtime = ? AND amountToSend > ?', [0, 5]);        
+                                    WHERE sentAirtime = ? AND amountToSend > ?', [0, 5]);                                   
         
         try {
 
@@ -77,7 +75,7 @@ class AirtimeController extends Controller
                 
             //Display the AfricasTalking API response after having sent airtime
             print_r($airtime_transactions);
-                
+            file_put_contents('AIRTIME_SENT_RESPONSE.txt', print_r($airtime_transactions, true));
             //Decode the JSON response from AfricasTalking
             $array1 = json_decode(json_encode($airtime_transactions["data"]),true);
             
