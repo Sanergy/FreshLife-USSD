@@ -31,3 +31,6 @@ Route::post('transactions/searchByDate','TransactionController@searchByDate');
 Route::resource('/checkouts','CheckoutController');
 Route::post('checkouts/search','CheckoutController@searchByPhoneOrStatus');
 Route::post('checkouts/searchByDate','CheckoutController@searchByDate');
+
+//Airtime
+Route::get('/airtime/index','AirtimeController@sendAirtime');
