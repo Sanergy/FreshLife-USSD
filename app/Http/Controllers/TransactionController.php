@@ -18,6 +18,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
+        //Increases PHP timeout to 300sec from default of 30sec
+        set_time_limit(300);
+        
         $transactions = DB::select('select * from vwUSSDTransactions ORDER BY TransactionDate DESC');
 
         return view('transactions.index',compact('transactions'));
